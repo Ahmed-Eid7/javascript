@@ -16,61 +16,64 @@ These are all the DIV ID's you're gonna need access to 👇
 #3 ID 👉 'numberOfPeople' = Current number of people you're splitting the bill between
 #4 ID 👉 'perPersonTotal' = Total dollar value owed per person
 */
+let billTotalInput = document.getElementById("billTotalInput");
+let tipInput = document.getElementById("tipInput");
+let numberOfPeople = document.getElementById("numberOfPeople");
+let perPersonTotal = document.getElementById("perPersonTotal");
 
 // Get global access to all inputs / divs here (you'll need them later 😘)
 // bill input, tip input, number of people div, and per person total div
 
-
-
 // Get number of people from number of people div
-
+console.log(numberOfPeople);
+let numPeople = Number(numberOfPeople.innerHTML);
 
 // ** Calculate the total bill per person **
 const calculateBill = () => {
   // get bill from user input & convert it into a number
-  
+  let bill = Number(billTotalInput.value);
 
   // get the tip from user & convert it into a percentage (divide by 100)
-  
+  let tip = Number(tipInput.value) / 100;
 
   // get the total tip amount
-  
+  let totalTip = bill * tip;
 
   // calculate the total (tip amount + bill)
-  
+  let total = bill + totalTip;
 
   // calculate the per person total (total divided by number of people)
-
+  let perPerson = total / Number(numPeople);
 
   // update the perPersonTotal on DOM & show it to user
-
-}
+  perPersonTotal.innerHTML = "$" + perPerson.toFixed(2);
+};
 
 // ** Splits the bill between more people **
 const increasePeople = () => {
   // increment the amount of people
-
+  numPeople++;
 
   // update the DOM with the new number of people
-
+  numberOfPeople.innerHTML = numPeople;
 
   // calculate the bill based on the new number of people
-
-}
+  calculateBill();
+};
 
 // ** Splits the bill between fewer people **
 const decreasePeople = () => {
   // guard clause
   // if amount is 1 or less simply return
   // (a.k.a you can't decrease the number of people to 0 or negative!)
+  if (numPeople <= 1) return;
 
-  
   // decrement the amount of people
-
+  numPeople--;
 
   // update the DOM with the new number of people
-
+  numberOfPeople.innerHTML = numPeople;
 
   // calculate the bill based on the new number of people
-
-}
+  calculateBill();
+};

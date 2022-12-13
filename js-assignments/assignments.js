@@ -604,3 +604,287 @@ document.write("Iam In Page");
 // if (st.slice(0, 6).repeat(2) === "ElzeroElzero") {
 //   console.log("Good");
 // }
+
+//////////////////////////////////////////
+// ARRAY AND METHODS
+/////////////////////////////////////////
+// #1
+// let myFriends = ["Ahmed", "Elham", "Osama", "Gamal"];
+// let num = 3;
+
+// Method 1
+// console.log(myFriends.slice(+false, num)); // ["Ahmed", "Elham", "Osama"];
+// Method 2
+// myFriends.pop();
+// console.log(myFriends); // ["Ahmed", "Elham", "Osama"];
+
+// #2
+// let friends = ["Ahmed", "Eman", "Osama", "Gamal"];
+
+// Write Your Code Here
+// friends.pop();
+// friends.shift();
+// console.log(friends); // ["Eman", "Osama"]
+
+// #3
+// let arrOne = ["C", "D", "X"];
+// let arrTwo = ["A", "B", "Z"];
+// let finalArr = [];
+
+// Write One Single Line Of Code
+// console.log(finalArr.concat(arrTwo, arrOne).sort().reverse()); // ["Z", "X", "D", "C", "B", "A"]
+
+// #4
+// let website = "Go";
+// let words = [`${website}ogle`, "Facebook", ["Elzero", "Web", "School"]];
+
+// console.log(words[website.length][0].slice(website.length).toUpperCase()); // ZERO
+
+// #5
+// let needle = "JS";
+// let haystack = ["PHP", "JS", "Python"];
+
+// Write 3 Solutions
+// if (haystack.includes(needle)) {
+//   console.log("FOUND");
+// }
+// if (haystack.indexOf(needle) !== -1) {
+//   console.log("FOUND");
+// }
+// if (haystack.lastIndexOf(needle) !== -1) {
+//   console.log("FOUND");
+// }
+
+// #6
+// let arr1 = ["A", "C", "X"];
+// let arr2 = ["D", "E", "F", "Y"];
+// let allArrs = [];
+
+// Your Code Here
+
+// console.log(
+//   allArrs.concat(arr1, arr2).sort().slice(arr2.length).join("").toLowerCase()
+// ); // fxy
+
+// #7 CHALLENGE
+// let zero = 0;
+// let counter = 3;
+// let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
+
+// my.reverse();
+// my.splice(zero, --counter);
+// console.log(my); // ["Osama", "Elham", "Mazero", "Ahmed"];
+
+// console.log(my.slice(++zero, counter + zero)); // ["Elham", "Mazero"]
+
+// console.log(my[zero].slice(--zero, counter) + my[counter].slice(counter)); // "Elzero"
+
+// console.log(my[counter].substr(-counter, --counter) + my[zero][zero]); // "rO"
+
+//////////////////////////////////////////
+// FOR LOOP
+/////////////////////////////////////////
+// #1
+// let start = 10;
+// let end = 100;
+// let exclude = 40;
+
+// for (let i = start; i <= end; i += start) {
+//   if (i === exclude) continue;
+//   console.log(i);
+// }
+// Output
+// 10;
+// 20;
+// 30;
+// 50;
+// 60;
+// 70;
+// 80;
+// 90;
+// 100;
+
+// #2
+// let start = 10;
+// let end = 0;
+// let stop = 3;
+
+// for (let i = start; i > end; i--) {
+//   if (i === start) {
+//     console.log(i);
+//   } else {
+//     console.log(`0${i}`);
+//   }
+//   if (i === stop) break;
+// }
+
+// Output
+// 10;
+// 09;
+// 08;
+// 07;
+// 06;
+// 05;
+// 04;
+// 03;
+
+// #3
+// let start = 1;
+// let end = 6;
+// let breaker = 2;
+
+// for (let i = start; i <= end; i++) {
+//   console.log(i);
+//   for (let i = breaker; i <= breaker * breaker; i += breaker) {
+//     console.log(`-- ${i}`);
+//   }
+// }
+
+// Output
+// 1
+// -- 2
+// -- 4
+// 2
+// -- 2
+// -- 4
+// 3
+// -- 2
+// -- 4
+// 4
+// -- 2
+// -- 4
+// 5
+// -- 2
+// -- 4
+// 6
+// -- 2
+// -- 4
+
+// #4
+// let index = 10;
+// let jump = 2;
+// let end = 0;
+
+// for (;;) {
+//   console.log(index);
+//   index -= jump;
+//   if (index === jump) break;
+// }
+
+// Output
+// 10;
+// 8;
+// 6;
+// 4;
+
+// #5
+// let friends = [
+//   "Ahmed",
+//   "Sayed",
+//   "Eman",
+//   "Marwa",
+//   "Mahmoud",
+//   "Ameer",
+//   "Osama",
+//   "Sameh",
+// ];
+// let letter = "a";
+
+// let count = +true;
+// for (let i = +false; i < friends.length; i++) {
+//   if (friends[i][+false].toLowerCase() !== letter) {
+//     console.log(`${count++} => ${friends[i]}`);
+//   }
+// }
+
+// Output
+// ("1 => Sayed");
+// ("2 => Eman");
+// ("3 => Mahmoud");
+// ("4 => Osama");
+// ("5 => Sameh");
+
+// #6
+// let start = 0;
+// let swappedName = "elZerO";
+// let str = "";
+
+// for (let i = start; i < swappedName.length; i++) {
+//   if (swappedName[i].toLowerCase() === swappedName[i]) {
+//     str += swappedName[i].toUpperCase();
+//   } else str += swappedName[i].toLowerCase();
+// }
+// console.log(str);
+
+// Output
+// ("ELzERo");
+
+// #7
+// let start = 0;
+// let mix = [1, 2, 3, "A", "B", "C", 4];
+
+// for (let i = start; i < mix.length; i++) {
+//   if (typeof mix[i] === "number") {
+//     if (mix[i] === 1) continue;
+//     console.log(mix[i]);
+//   }
+// }
+
+// Output
+// 2;
+// 3;
+// 4;
+
+// #8 CHALLENGE
+let myAdmins = ["Ahmed", "Osama", "Sayed", "Stop", "Samera"];
+let myEmployee = [
+  "Amgad",
+  "Samah",
+  "Ameer",
+  "Omar",
+  "Othman",
+  "Ola",
+  "Sara",
+  "Amany",
+  "Samia",
+  "Anwar",
+];
+let count = 0;
+
+document.write(`<div>We have ${myAdmins.indexOf("Stop")} admins</div><hr>`);
+
+for (let i = 0; myAdmins.length; i++) {
+  if (myAdmins[i] === "Stop") break;
+  document.write(`<div style='font-family: arial'>`);
+  document.write(`<h1>The admin for team ${i + 1} is ${myAdmins[i]}</h1>`);
+  document.write(`<h2 style='font-style: italic'>Team member:</h2>`);
+  document.write("<ol>");
+  for (let j = 0; j < myEmployee.length; j++) {
+    if (myEmployee[j][0] === myAdmins[i][0]) {
+      document.write(`<li>${myEmployee[j]}</li>`);
+    }
+  }
+  document.write("</ol>");
+  document.write(`</div>`);
+}
+
+//////////////////////////////////////////
+// WHILE LOOP
+/////////////////////////////////////////
+// #1
+// let friends = ["Ahmed", "Sayed", "Ali", 1, 2, "Mahmoud", "Amany"];
+// let index = 0;
+// let counter = 0;
+
+// while (index < friends.length) {
+//   if (typeof friends[index] === "string") {
+//     if (friends[index][+false] !== "A") {
+//       console.log(`${++counter} => ${friends[index]}`);
+//     }
+//   }
+//   index++;
+// }
+
+// Output
+// ("1 => Sayed");
+// ("2 => Mahmoud");

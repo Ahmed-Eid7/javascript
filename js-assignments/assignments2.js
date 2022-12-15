@@ -104,3 +104,66 @@
 // };
 
 // console.log(calc(10, myNumbers[+false], myNumbers[+true]));
+
+//////////////////////////////////////////
+// HIGHER ORDER FUNCTIONS
+/////////////////////////////////////////
+// #1
+// let mix = [1, 2, 3, "E", 4, "l", "z", "e", "r", 5, "o"];
+
+// let res = mix
+//   .map((e) => (typeof e === "string" ? e : ""))
+//   .reduce((a, c) => `${a}${c}`);
+
+// console.log(res);
+
+// #2
+// let myString = "EElllzzzzzzzeroo";
+
+// let res = myString
+//   .split("")
+//   .filter((e, i) => myString.indexOf(e) === i)
+//   .reduce((a, c) => `${a}${c}`);
+
+// console.log(res);
+
+// #3
+// let myArray = ["E", "l", "z", ["e", "r"], "o"];
+
+// let res = myArray.reduce((a, c) => {
+//   if (typeof c === "object") {
+//     c = c.reduce((a, c) => `${a}${c}`);
+//   }
+//   return a + c;
+// });
+
+// console.log(res);
+
+// #4
+// let numsAndStrings = [1, 10, -10, -20, 5, "A", 3, "B", "C"];
+
+// let res = numsAndStrings.filter((e) => typeof e === "number").map((e) => -e);
+
+// console.log(res);
+
+// #5
+// let nums = [2, 12, 11, 5, 10, 1, 99];
+
+// let res = nums.reduce((a, c) => {
+//   return c % 2 === 0 ? a * c : a + c;
+// }, 1);
+
+// console.log(res);
+
+// #6
+// let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+
+// let res = myString
+//   .split(",")
+//   .filter((e) => Number.isNaN(parseInt(e)))
+//   .map((e) => e[+false])
+//   .reduce((a, c) => {
+//     return c === "_" ? a + " " : a + c;
+//   });
+
+// console.log(res.slice(+false, res.length - +true));

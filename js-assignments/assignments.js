@@ -836,37 +836,37 @@ document.write("Iam In Page");
 // 4;
 
 // #8 CHALLENGE
-let myAdmins = ["Ahmed", "Osama", "Sayed", "Stop", "Samera"];
-let myEmployee = [
-  "Amgad",
-  "Samah",
-  "Ameer",
-  "Omar",
-  "Othman",
-  "Ola",
-  "Sara",
-  "Amany",
-  "Samia",
-  "Anwar",
-];
-let count = 0;
+// let myAdmins = ["Ahmed", "Osama", "Sayed", "Stop", "Samera"];
+// let myEmployee = [
+//   "Amgad",
+//   "Samah",
+//   "Ameer",
+//   "Omar",
+//   "Othman",
+//   "Ola",
+//   "Sara",
+//   "Amany",
+//   "Samia",
+//   "Anwar",
+// ];
+// let count = 0;
 
-document.write(`<div>We have ${myAdmins.indexOf("Stop")} admins</div><hr>`);
+// document.write(`<div>We have ${myAdmins.indexOf("Stop")} admins</div><hr>`);
 
-for (let i = 0; myAdmins.length; i++) {
-  if (myAdmins[i] === "Stop") break;
-  document.write(`<div style='font-family: arial'>`);
-  document.write(`<h1>The admin for team ${i + 1} is ${myAdmins[i]}</h1>`);
-  document.write(`<h2 style='font-style: italic'>Team member:</h2>`);
-  document.write("<ol>");
-  for (let j = 0; j < myEmployee.length; j++) {
-    if (myEmployee[j][0] === myAdmins[i][0]) {
-      document.write(`<li>${myEmployee[j]}</li>`);
-    }
-  }
-  document.write("</ol>");
-  document.write(`</div>`);
-}
+// for (let i = 0; myAdmins.length; i++) {
+//   if (myAdmins[i] === "Stop") break;
+//   document.write(`<div style='font-family: arial'>`);
+//   document.write(`<h1>The admin for team ${i + 1} is ${myAdmins[i]}</h1>`);
+//   document.write(`<h2 style='font-style: italic'>Team member:</h2>`);
+//   document.write("<ol>");
+//   for (let j = 0; j < myEmployee.length; j++) {
+//     if (myEmployee[j][0] === myAdmins[i][0]) {
+//       document.write(`<li>${myEmployee[j]}</li>`);
+//     }
+//   }
+//   document.write("</ol>");
+//   document.write(`</div>`);
+// }
 
 //////////////////////////////////////////
 // WHILE LOOP
@@ -888,3 +888,117 @@ for (let i = 0; myAdmins.length; i++) {
 // Output
 // ("1 => Sayed");
 // ("2 => Mahmoud");
+
+//////////////////////////////////////////
+// FUNCTION AND PARAMETERS
+/////////////////////////////////////////
+// #1
+// function sayHello(theName, theGender) {
+//   console.log(
+//     `Hello ${
+//       theGender === "Male" ? "Mr " : theGender === "Female" ? "Miss " : ""
+//     }${theName}`
+//   );
+// }
+
+// // Needed Output
+// sayHello("Osama", "Male"); // "Hello Mr Osama"
+// sayHello("Eman", "Female"); // "Hello Miss Eman"
+// sayHello("Sameh"); // "Hello Sameh"
+
+// #2
+// function calculate(firstNum, secondNum, operation) {
+//   if (secondNum === undefined) {
+//     console.log("second number does not exist");
+//   } else {
+//     if (operation === "add" || operation === undefined) {
+//       console.log(firstNum + secondNum);
+//     } else if (operation === "subtract") {
+//       console.log(firstNum - secondNum);
+//     } else if (operation === "multiply") {
+//       console.log(firstNum * secondNum);
+//     }
+//   }
+// }
+
+// // Needed Output
+// calculate(20); // Second Number Not Found
+// calculate(20, 30); // 50
+// calculate(20, 30, "add"); // 50
+// calculate(20, 30, "subtract"); // -10
+// calculate(20, 30, "multiply"); // 600
+
+// #3
+// function ageInTime(theAge) {
+//   if (theAge < 10 || theAge > 100) {
+//     console.log("Age out of range");
+//   } else {
+//     console.log("Months: ", theAge * 12);
+//     console.log("Weeks: ", theAge * 12 * 4);
+//     console.log("Days: ", theAge * 12 * 4 * 7);
+//     console.log("Hours: ", theAge * 12 * 4 * 7 * 24);
+//     console.log("Minutes: ", theAge * 12 * 4 * 7 * 24 * 60);
+//     console.log("Seconds: ", theAge * 12 * 4 * 7 * 24 * 60 * 60);
+//   }
+// }
+
+// // Needed Output
+// ageInTime(110); // Age Out Of Range
+// ageInTime(38); // Months Example => 456 Months
+
+// #4
+// function checkStatus(a, b, c) {
+//   let name;
+//   let age;
+//   let hire;
+//   typeof a === "string"
+//     ? (name = a)
+//     : typeof a === "number"
+//     ? (age = a)
+//     : (hire = a);
+//   typeof b === "string"
+//     ? (name = b)
+//     : typeof b === "number"
+//     ? (age = b)
+//     : (hire = b);
+//   typeof c === "string"
+//     ? (name = c)
+//     : typeof c === "number"
+// ? (age = c)
+//     : (hire = c);
+//   console.log(
+//     `Hello ${name}, Your Age Is ${age}, You are ${
+//       hire === false ? "Not " : ""
+//     }avalable For Hire.`
+//   );
+// }
+
+// // Needed Output
+// checkStatus("Osama", 38, true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+// checkStatus(38, "Osama", true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+// checkStatus(true, 38, "Osama"); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+// checkStatus(false, "Osama", 38); // "Hello Osama, Your Age Is 38, You Are Not Available For Hire"
+
+// #5
+// function createSelectBox(startYear, endYear) {
+//   document.write("<select>");
+//   for (let i = startYear; i <= endYear; i++) {
+//     document.write(`<option value='${i}'>${i}</option>`);
+//   }
+//   document.write("</select>");
+// }
+// createSelectBox(2000, 2021);
+
+// #6
+// const multiply = (...numbers) => {
+//   let res = 1;
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (typeof numbers[i] === "string") continue;
+//     res *= parseInt(numbers[i]);
+//   }
+//   console.log(res);
+// };
+
+// multiply(10, 20); // 200
+// multiply("A", 10, 30); // 300
+// multiply(100.5, 10, "B"); // 1000

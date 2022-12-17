@@ -403,3 +403,140 @@
 //     results.appendChild(createElement);
 //   }
 // };
+
+//////////////////////////////////////////
+// DOCUMENT OBJECT MODEL
+/////////////////////////////////////////
+// #2
+// let classesToAdd = document.querySelector(".classes-to-add");
+// let classesToRemove = document.querySelector(".classes-to-remove");
+// let current = document.querySelector(".current");
+// let classesList = document.querySelector(".classes-list").children[1];
+// let createElement = document.createElement("span");
+
+// if (classesList.children.length === 0)
+//   classesList.textContent = "No Classes To Show";
+
+// classesToAdd.onblur = function () {
+//   let classes = classesToAdd.value.split(" ");
+
+//   classes.forEach((e) => {
+//     current.classList.add(e.toLowerCase());
+
+//     createElement.append(e.toLowerCase());
+//     createElement.className = e.toLowerCase();
+//     classesList.appendChild(createElement);
+//   });
+//   classesToAdd.value = "";
+// };
+
+// classesToRemove.onblur = function () {
+//   let removedClasses = classesToRemove.value.split(" ");
+
+//   removedClasses.forEach((e) => {
+//     current.classList.remove(e.toLowerCase());
+
+//     let removedElement = document.querySelector(`.${e}`);
+//     classesList.removeChild(removedElement);
+//   });
+//   classesToRemove.value = "";
+// };
+
+// classesToRemove.onblur = function () {
+//   let removedClasses = classesToRemove.value.split(" ");
+
+//   removedClasses.forEach((e) => {
+//     current.classList.remove(e);
+
+//     let elementToRemove = document.querySelector(`.${e}`);
+//     console.log(elementToRemove);
+//     classesList.remove(elementToRemove);
+//   });
+//   classesToRemove.value = "";
+// };
+
+// let classesToAdd = document.querySelector(".classes-to-add");
+// let classesToRemove = document.querySelector(".classes-to-remove");
+// let current = document.querySelector(".current");
+// let classesList = document.querySelector(".classes-list").children[1];
+// let createElement = document.createElement("span");
+
+// let classes;
+
+// if (classesList.innerHTML === "") classesList.innerHTML = "No Classes To Show";
+
+// let addClasses = function (e) {
+//   classesList.innerHTML = "";
+//   classesToAdd.value
+//     .split(" ")
+//     .sort()
+//     .forEach((i) => current.classList.add(i));
+//   classes = current.classList.value.split(" ");
+//   for (let i = 2; i < classes.length; i++) {
+//     let element = document.createElement("span");
+//     element.textContent = classes[i];
+//     element.className = classes[i];
+//     classesList.appendChild(element);
+//   }
+// };
+
+// let removeClasses = function (e) {
+//   classesList.innerHTML = "";
+//   current.classList.remove(e);
+//   classes = current.classList.value.split(" ").sort();
+//   for (let i = 2; i < classes.length; i++) {
+//     let element = document.createElement("span");
+//     element.textContent = classes[i];
+//     element.className = classes[i];
+//     classesList.appendChild(element);
+//   }
+// };
+
+// classesToAdd.addEventListener("blur", (e) => {
+//   // if (classesToAdd.textContent === "") return;
+//   addClasses(e.target.value);
+//   classesToAdd.value = "";
+// });
+
+// classesToRemove.addEventListener("blur", (e) => {
+//   if (classesToAdd.textContent === "") return;
+//   removeClasses(e.target.value);
+//   classesToRemove.value = "";
+//   if (classesList.innerHTML === "")
+//     classesList.innerHTML = "No Classes To Show";
+// });
+
+// #3
+// document.querySelector("p").remove();
+
+// let myElement = document.querySelector(".our-element");
+// let createElement = document.createElement("div");
+// let createElement2 = document.createElement("div");
+
+// createElement.textContent = "Start";
+// createElement.className = "start";
+// createElement.setAttribute("title", "Start Element");
+// createElement.setAttribute("data-value", "Start");
+
+// createElement2.textContent = "End";
+// createElement2.className = "end";
+// createElement2.setAttribute("title", "End Element");
+// createElement2.setAttribute("data-value", "End");
+
+// myElement.before(createElement);
+// myElement.after(createElement2);
+
+// #4
+// console.log(document.querySelector("span").nextSibling.nextSibling.nextSibling);
+
+// #5
+
+// console.log(document.body.children);
+// let elements = document.body.children;
+
+// [...elements].forEach((e) =>
+//   e.addEventListener("click", (e) => {
+//     console.log(`This is ${e.target.nodeName}`);
+//     console.log(e);
+//   })
+// );

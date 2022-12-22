@@ -329,3 +329,98 @@
 // console.log(age);
 // console.log(`${available ? "" : "Not "}available`);
 // console.log(second);
+
+///////////////////////////////////////////////////
+// MAP AND SET
+///////////////////////////////////////////////////
+// #1
+
+// let setOfNumbers = new Set([10]);
+// setOfNumbers.add(20).add(setOfNumbers.size);
+// console.log(setOfNumbers);
+// console.log([...setOfNumbers][2]);
+
+// Needed Output
+// Set(3) {10, 20, 2}
+// 2
+
+// #2
+// let myFriends = ["Osama", "Ahmed", "Sayed", "Sayed", "Mahmoud", "Osama"];
+// console.log([...new Set(myFriends)].sort());
+
+// Needed Output
+// (4) ['Ahmed', 'Mahmoud', 'Osama', 'Sayed']
+
+// #3
+// let myInfo = {
+//   username: "Osama",
+//   role: "Admin",
+//   country: "Egypt",
+// };
+// console.log(new Map(Object.entries(myInfo)));
+// console.log(new Map(Object.entries(myInfo)).size);
+// console.log(new Map(Object.entries(myInfo)).has("role"));
+
+// Needed Output
+// Map(3) {'username' => 'Osama', 'role' => 'Admin', 'country' => 'Egypt'}
+// 3
+// true
+
+// #4
+// let theNumber = 100020003000;
+// console.log(
+//   +[...new Set(Array.from(theNumber.toString()))].filter((e) => +e > 0).join("")
+// );
+
+// Needed Output
+// 123
+
+// #5
+// let theName = "Elzero";
+// console.log(Array.from(theName));
+// console.log([...theName]);
+// console.log(theName.split(""));
+// console.log([...new Set(theName)]);
+
+// Needed Output
+// ['E', 'l', 'z', 'e', 'r', 'o']
+
+// #6
+// let replaceNumberWithLetter = (arr) => {
+//   let number = arr.filter((e) => typeof e === "number");
+//   let newArr = [...number, ...arr.filter((e) => typeof e === "string")];
+
+//   return newArr.copyWithin(0, number.length, number.length * 2);
+// };
+
+// console.log(replaceNumberWithLetter(["A", "B", "C", "D", "E", 10, 15, 6]));
+// // ['A', 'B', 'C', 'A', 'B', 'C', 'D', 'E']
+// console.log(replaceNumberWithLetter(["A", "B", "C", 20, "D", "E", 10, 15, 6]));
+// // ['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'E']
+// console.log(replaceNumberWithLetter(["Z", "Y", "A", "D", "E", 10, 1]));
+// // ["Z", "Y", "Z", "Y", "A", "D", "E"]
+
+// #7
+// let numsOne = [1, 2, 3];
+// let numsTwo = [4, 5, 6];
+// console.log([...numsOne, ...numsTwo]);
+// console.log(numsOne.concat(numsTwo));
+// console.log([...new Set([...numsOne, ...numsTwo])]);
+
+// Needed Output
+// [1, 2, 3, 4, 5, 6]
+
+// #8
+// let n1 = [10, 30, 10, 20];
+// let n2 = [30, 20, 10];
+
+// console.log(
+//   +[...new Set([...n1, ...n2].join("").split(""))]
+//     .join("")
+//     .split("3")
+//     .reverse()
+//     .join("")
+// );
+
+// Needed Output
+// 210

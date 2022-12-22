@@ -12,6 +12,26 @@
 "min-temp"
 "max-temp"
 */
+let cityName = document.querySelector("#city-name");
+let weatherType = document.querySelector("#weather-type");
+let temp = document.querySelector("#temp");
+let minTemp = document.querySelector("#min-temp");
+let maxTemp = document.querySelector("#max-temp");
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "3cfe364db8msh611aa1331a5f64bp1546fbjsn040642f7256d",
+    "X-RapidAPI-Host": "open-weather-map27.p.rapidapi.com",
+  },
+};
+
+fetch(
+  "https://open-weather-map27.p.rapidapi.com/weather?q=egypt&units=imperial",
+  options
+)
+  .then((response) => response.json())
+  .then((response) => console.log(response))
+  .catch((err) => console.error(err));
 
 // API_KEY for maps api
 let API_KEY = "a8e71c9932b20c4ceb0aed183e6a83bb";
@@ -19,7 +39,7 @@ let API_KEY = "a8e71c9932b20c4ceb0aed183e6a83bb";
 /**
  * Retrieve weather data from openweathermap
  * HINT: Use fetch()
- * HINT: URL should look like this: 
+ * HINT: URL should look like this:
  * https://api.openweathermap.org/data/2.5/weather?q=detroit&appid=a8e71c9932b20c4ceb0aed183e6a83bb&units=imperial
  */
 getWeatherData = (city) => {
@@ -27,17 +47,16 @@ getWeatherData = (city) => {
   //HINT: Use template literals to create a url with input and an API key
 
   //CODE GOES HERE
-}
+};
 
 /**
  * Retrieve city input and get the weather data
  * HINT: Use the promise returned from getWeatherData()
  */
 const searchCity = () => {
-  const city = document.getElementById('city-input').value;
+  const city = document.getElementById("city-input").value;
   // CODE GOES HERE
-
-}
+};
 
 /**
  * Show the weather data in HTML
@@ -45,6 +64,4 @@ const searchCity = () => {
  */
 const showWeatherData = (weatherData) => {
   //CODE GOES HERE
-  
-}
-
+};

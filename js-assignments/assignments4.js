@@ -429,52 +429,212 @@
 // REGULAR EXPRESSION
 ///////////////////////////////////////////////////
 // #1
-let ip = "2001:db8:3333:4444:5555:6666:7777:8888";
-let regex = /\w{4}:\w{3}(:\w{4}){1,}/gi;
-console.log(ip.match(regex));
-console.log(regex.test(ip));
+// let ip = "2001:db8:3333:4444:5555:6666:7777:8888";
+// let regex = /\w{4}:\w{3}(:\w{4}){1,}/gi;
+// console.log(ip.match(regex));
+// console.log(regex.test(ip));
 
 // #2
-let specialNames = "Os10O OsO Os100O Osa100O Os1000 Os100m";
-let regex2 = /(\bos)\d*(o\b)/gi;
-console.log(specialNames.match(regex2));
+// let specialNames = "Os10O OsO Os100O Osa100O Os1000 Os100m";
+// let regex2 = /(\bos)\d*(o\b)/gi;
+// console.log(specialNames.match(regex2));
 
 // Output
 // ['Os10O', 'OsO', 'Os100O']
 
 // #3
-let phone = "+(995)-123 (4567)";
-let regex3 = /\+\(\d{3}\)-\d{3}\s\(\d{4}\)/;
-console.log(regex3.test(phone));
+// let phone = "+(995)-123 (4567)";
+// let regex3 = /\+\(\d{3}\)-\d{3}\s\(\d{4}\)/;
+// console.log(regex3.test(phone));
 
 // #4
-let re = /https?:\/\/(?:[-\w]+\.)?([-\w]+)\.\w+(?:\.\w+)?\/?.*/i;
+// let re = /https?:\/\/(?:[-\w]+\.)?([-\w]+)\.\w+(?:\.\w+)?\/?.*/i;
 
 // #5
-let date1 = "25/10/1982";
-let date2 = "25 - 10 - 1982";
-let date3 = "25 10 1982";
-let date4 = "25 10 82";
+// let date1 = "25/10/1982";
+// let date2 = "25 - 10 - 1982";
+// let date3 = "25 10 1982";
+// let date4 = "25 10 82";
 
-let re2 = /\d{2}(\/|\s-\s|\s)\d{2}(\/|\s-\s|\s)\d{2,4}/g;
+// let re2 = /\d{2}(\/|\s-\s|\s)\d{2}(\/|\s-\s|\s)\d{2,4}/g;
 
-console.log(date1.match(re2)); // "25/10/1982"
-console.log(date2.match(re2)); // "25 - 10 - 1982"
-console.log(date3.match(re2)); // "25 10 1982"
-console.log(date4.match(re2)); // "25 10 82"
+// console.log(date1.match(re2)); // "25/10/1982"
+// console.log(date2.match(re2)); // "25 - 10 - 1982"
+// console.log(date3.match(re2)); // "25 10 1982"
+// console.log(date4.match(re2)); // "25 10 82"
 
 // #6 CHALLENGE
-let url1 = "elzero.org";
-let url2 = "http://elzero.org";
-let url3 = "https://elzero.org";
-let url4 = "https://www.elzero.org";
-let url5 = "https://www.elzero.org:8080/articles.php?id=100&cat=topics";
+// let url1 = "elzero.org";
+// let url2 = "http://elzero.org";
+// let url3 = "https://elzero.org";
+// let url4 = "https://www.elzero.org";
+// let url5 = "https://www.elzero.org:8080/articles.php?id=100&cat=topics";
 
-let re3 =
-  /(https?:\/\/)?(www.)?\w{1,}.org(:\d{4}\/\w+.\w+\?id=\d+\&cat=\w+)?/gi;
+// let re3 =
+//   /(https?:\/\/)?(www.)?\w{1,}.org(:\d{4}\/\w+.\w+\?id=\d+\&cat=\w+)?/gi;
 
-console.log(url1.match(re3));
-console.log(url2.match(re3));
-console.log(url3.match(re3));
-console.log(url4.match(re3));
-console.log(url5.match(re3));
+// console.log(url1.match(re3));
+// console.log(url2.match(re3));
+// console.log(url3.match(re3));
+// console.log(url4.match(re3));
+// console.log(url5.match(re3));
+
+///////////////////////////////////////////////////
+// OOP
+///////////////////////////////////////////////////
+// #1
+// function Car(name, model, price) {
+//   this.n = name;
+//   this.m = model;
+//   this.p = price;
+// }
+
+// class Car {
+//   constructor(name, model, price) {
+//     this.name = name;
+//     this.model = model;
+//     this.price = price;
+//   }
+
+//   run() {
+//     return "Car is running now";
+//   }
+
+//   stop() {
+//     return "Car is stopped";
+//   }
+// }
+
+// let car1 = new Car("car1", "model1", 10000);
+// let car2 = new Car("car2", "model2", 20000);
+// let car3 = new Car("car3", "model3", 30000);
+
+// console.log(
+//   `Car one Name is ${car1.name} and Model is ${car1.model} And Price Is ${car1.price}`
+// );
+// console.log(car1.run());
+
+// ("Car One Name Is MG And Model Is 2022 And Price Is 420000");
+// ("Car Is Running Now");
+
+// #2
+// class Phone {
+//   constructor(name, serial, price) {
+//     this.name = name;
+//     this.serial = serial;
+//     this.price = price;
+//   }
+// }
+
+// class Tablet extends Phone {
+//   constructor(name, serial, price, size) {
+//     super(name, serial, price);
+//     this.size = size || "Unknown";
+//   }
+
+//   fullDetails() {
+//     return `${this.name} Price is ${this.price}, Serial is ${this.serial} And Size is ${this.size}`;
+//   }
+// }
+
+// let TabletOne = new Tablet("iPad", 100200300, 1500, 12.9);
+// let TabletTwo = new Tablet("Nokia", 350450650, 800, 10.5);
+// let TabletThree = new Tablet("LG", 250450650, 650);
+
+// console.log(`${TabletOne.fullDetails()}`);
+// // iPad Serial is 100200300 And Size Is 12.9
+
+// console.log(`${TabletTwo.fullDetails()}`);
+// // Nokia Serial is 350450650 And Size Is 10.5
+
+// console.log(`${TabletThree.fullDetails()}`);
+// // LG Serial is 250450650 And Size Is Unknown
+
+// #3
+// Edit The Class
+// class User {
+//   #c;
+//   constructor(username, card) {
+//     this.u = username;
+//     this.#c = card;
+//   }
+
+//   showData() {
+//     let regex = /\d{4}-\d{4}-\d{4}-\d{4}/;
+//     let cardNumber = [];
+//     this.#c
+//       .toString()
+//       .split("")
+//       .map((e) => {
+//         cardNumber.push(e);
+//         if ((this.#c.toString().indexOf(e) + 1) % 4 === 0) {
+//           cardNumber.push("-");
+//         }
+//       });
+//     return `Hello ${this.u} Your credit card number is ${
+//       regex.test(this.#c)
+//         ? this.#c
+//         : cardNumber.join("").slice(0, cardNumber.length - 1)
+//     }`;
+//   }
+// }
+
+// // Do Not Edit Anything Below
+
+// let userOne = new User("Osama", "1234-5678-1234-5678");
+// let userTwo = new User("Ahmed", "1234567812345678");
+// let userThree = new User("Ghareeb", 1234567812345678);
+
+// console.log(userOne.showData());
+// // Hello Osama Your Credit Card Number Is 1234-5678-1234-5678
+
+// console.log(userTwo.showData());
+// // Hello Ahmed Your Credit Card Number Is 1234-5678-1234-5678
+
+// console.log(userThree.showData());
+// // Hello Ghareeb Your Credit Card Number Is 1234-5678-1234-5678
+
+// console.log(userOne.c); // Prevent Accessing To Card Property Here
+// // Undefined
+
+// #4
+// String.prototype.addLove = () => {
+//   return "I Love Elzero Web School";
+// };
+
+// // Do Not Edit Below
+// let myStr = "Elzero";
+// console.log(myStr.addLove()); // I Love Elzero Web School
+
+// #5
+// const myObj = {
+//   username: "Elzero",
+//   id: 100,
+//   score: 1000,
+//   country: "Egypt",
+// };
+
+// // Write Your Code Here
+// Object.defineProperties(myObj, {
+//   score: {
+//     writable: false,
+//   },
+//   id: {
+//     enumerable: false,
+//   },
+// });
+// delete myObj.country;
+
+// myObj.score = 500;
+
+// for (let prop in myObj) {
+//   console.log(`${prop} => ${myObj[prop]}`);
+// }
+
+// console.log(myObj);
+
+// Needed Output
+
+// "username => Elzero"
+// "score => 1000"
+// {username: 'Elzero', score: 1000, id: 100}

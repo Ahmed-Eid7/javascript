@@ -638,3 +638,33 @@
 // "username => Elzero"
 // "score => 1000"
 // {username: 'Elzero', score: 1000, id: 100}
+
+///////////////////////////////////////////////////
+// DATE, GENERATOR< MODULES
+///////////////////////////////////////////////////
+// #1
+
+// Needed Output
+// let dateNow = new Date();
+// let birthday = new Date(1998, 5, 7);
+// let dateDiff = dateNow - birthday;
+
+// console.log(dateDiff / 1000, "Seconds");
+// console.log(dateDiff / 1000 / 60, "Minutes");
+// console.log(dateDiff / 1000 / 60 / 60, "hours");
+// console.log(dateDiff / 1000 / 60 / 60 / 24, "Days");
+// console.log(dateDiff / 1000 / 60 / 60 / 24 / 30, "Months");
+// console.log(dateDiff / 1000 / 60 / 60 / 24 / 30 / 12, "Years");
+
+// ("1247939400 Seconds");
+// ("20798990 Minutes");
+// ("346650 Hours");
+// ("14444 Days");
+// ("481 Months");
+// ("40 Years");
+
+// #2
+// Needed Output
+// console.log(new Date(1980, 0, 1, 0, 0, 1));
+
+// ("Tue Jan 01 1980 00:00:01 GMT+0200 (Eastern European Standard Time)");
